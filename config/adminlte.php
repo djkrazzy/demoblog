@@ -14,7 +14,7 @@ return [
     |
     */
 
-    'title' => 'AdminLTE 3',
+    'title' => 'BLOG cursos',
     'title_prefix' => '',
     'title_postfix' => '',
 
@@ -45,7 +45,7 @@ return [
     |
     */
 
-    'logo' => '<b>Admin</b>LTE',
+    'logo' => '<b>BLOG</b>Cursos',
     'logo_img' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
     'logo_img_class' => 'brand-image img-circle elevation-3',
     'logo_img_xl' => null,
@@ -247,17 +247,17 @@ return [
             'can'  => 'manage-blog',
         ],
         [
-            'text'        => 'pages',
-            'url'         => 'admin/pages',
-            'icon'        => 'far fa-fw fa-file',
-            'label'       => 4,
-            'label_color' => 'success',
+            'text'        => 'Dashboard',
+            'url'         => 'admin',
+            'icon'        => 'fas fa-tachometer-alt fa-fw',
+            //'label'       => 4,
+           // 'label_color' => 'success',
         ],
-        ['header' => 'account_settings'],
+        ['header' => 'Administrador'],
         [
-            'text' => 'profile',
-            'url'  => 'admin/settings',
-            'icon' => 'fas fa-fw fa-user',
+            'text' => 'Categorias',
+            'route'  => 'admin.categories.index',
+            'icon' => 'fab fa-fw fa-buffer',
         ],
         [
             'text' => 'change_password',

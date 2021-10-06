@@ -85,7 +85,7 @@ return [
 
     'layout_topnav' => null,
     'layout_boxed' => null,
-    'layout_fixed_sidebar' => null,
+    'layout_fixed_sidebar' => true,
     'layout_fixed_navbar' => null,
     'layout_fixed_footer' => null,
     'layout_dark_mode' => null,
@@ -248,8 +248,15 @@ return [
         ],
         [
             'text'        => 'Dashboard',
-            'url'         => 'admin',
+            'route'         => 'admin.home',
             'icon'        => 'fas fa-tachometer-alt fa-fw',
+            //'label'       => 4,
+           // 'label_color' => 'success',
+        ],
+        [
+            'text'        => 'Usuarios',
+            'route'         => 'admin.users.index',
+            'icon'        => 'fas fa-users fa-fw',
             //'label'       => 4,
            // 'label_color' => 'success',
         ],
@@ -258,66 +265,31 @@ return [
             'text' => 'Categorias',
             'route'  => 'admin.categories.index',
             'icon' => 'fab fa-fw fa-buffer',
+            'active'=> ['admin/categories*']
         ],
         [
-            'text' => 'change_password',
-            'url'  => 'admin/settings',
-            'icon' => 'fas fa-fw fa-lock',
+            'text' => 'Etiquetas',
+            'route'  => 'admin.tags.index',
+            'icon' => 'far fa-fw fa-bookmark',
+            'active'=> ['admin/tags*']
         ],
+
+        
+       
+        ['header' => 'Opciones de blog'],
         [
-            'text'    => 'multilevel',
-            'icon'    => 'fas fa-fw fa-share',
-            'submenu' => [
-                [
-                    'text' => 'level_one',
-                    'url'  => '#',
-                ],
-                [
-                    'text'    => 'level_one',
-                    'url'     => '#',
-                    'submenu' => [
-                        [
-                            'text' => 'level_two',
-                            'url'  => '#',
-                        ],
-                        [
-                            'text'    => 'level_two',
-                            'url'     => '#',
-                            'submenu' => [
-                                [
-                                    'text' => 'level_three',
-                                    'url'  => '#',
-                                ],
-                                [
-                                    'text' => 'level_three',
-                                    'url'  => '#',
-                                ],
-                            ],
-                        ],
-                    ],
-                ],
-                [
-                    'text' => 'level_one',
-                    'url'  => '#',
-                ],
-            ],
-        ],
-        ['header' => 'labels'],
-        [
-            'text'       => 'important',
+            'text'       => 'Listar Post',
             'icon_color' => 'red',
-            'url'        => '#',
+            'route'        => 'admin.posts.index',
+            'icon' => 'far fa-fw fa-clipboard',
         ],
         [
-            'text'       => 'warning',
+            'text'       => 'Crear nuevo post',
             'icon_color' => 'yellow',
-            'url'        => '#',
+            'route'        => 'admin.posts.create',
+            'icon' => 'far fa-fw fa-file',
         ],
-        [
-            'text'       => 'information',
-            'icon_color' => 'cyan',
-            'url'        => '#',
-        ],
+      
     ],
 
     /*
@@ -472,5 +444,5 @@ return [
     |
     */
 
-    'livewire' => false,
+    'livewire' => true,
 ];

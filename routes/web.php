@@ -1,6 +1,7 @@
 <?php
-
+use App\Http\Controllers\ParentController;
 use App\Http\Controllers\PostController;
+use App\Models\User;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -22,3 +23,11 @@ Route::get('tag/{tag}',[PostController::class, 'tag'] )->name('post.tag');
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
+
+
+Route::get('parent',function (User $users) {
+   $users = User::find(11)->children;
+   return $users;
+});
+
+
